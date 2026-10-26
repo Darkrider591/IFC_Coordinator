@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller / Build outputs
+build/
+dist/
+*.manifest
+*.spec.bak
+
+# Executables and large binary artifacts (use GitHub Releases instead)
+*.exe
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Editor & OS files
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+
+# Temporary / testing files
+*.tmp*
+*.bak
+test_output.ifc
+test_cli_output.ifc
+test_exe_output.ifc
+err.log
+out.log
