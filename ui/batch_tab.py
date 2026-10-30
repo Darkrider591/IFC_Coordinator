@@ -30,13 +30,9 @@ class BatchDropArea(QFrame):
         layout.setContentsMargins(12, 10, 12, 10)
         layout.setSpacing(10)
 
-        lbl_icon = QLabel("📂")
-        lbl_icon.setStyleSheet("font-size: 22px;")
-
         lbl_text = QLabel("Перетащите сюда файлы .ifc или целые папки для пакетной координации")
         lbl_text.setStyleSheet("font-size: 13px; font-weight: 600;")
 
-        layout.addWidget(lbl_icon)
         layout.addWidget(lbl_text)
 
     def mousePressEvent(self, event):
@@ -89,27 +85,27 @@ class BatchTab(QWidget):
         tools_layout = QHBoxLayout()
         tools_layout.setSpacing(6)
 
-        self.btn_add_files = QPushButton("➕ Добавить файлы...")
+        self.btn_add_files = QPushButton("Добавить файлы...")
         self.btn_add_files.setToolTip("Выбрать один или несколько файлов .ifc")
         self.btn_add_files.clicked.connect(self._add_files_dialog)
 
-        self.btn_add_folder = QPushButton("📁 Добавить папку...")
+        self.btn_add_folder = QPushButton("Добавить папку...")
         self.btn_add_folder.setToolTip("Добавить все файлы .ifc из выбранной папки")
         self.btn_add_folder.clicked.connect(self._add_folder_dialog)
 
         self.check_recursive = QCheckBox("Включая подпапки")
         self.check_recursive.setChecked(False)
 
-        self.btn_select_all = QPushButton("☑ Все")
+        self.btn_select_all = QPushButton("Все")
         self.btn_select_all.clicked.connect(self._select_all)
 
-        self.btn_deselect_all = QPushButton("☐ Снять")
+        self.btn_deselect_all = QPushButton("Снять")
         self.btn_deselect_all.clicked.connect(self._deselect_all)
 
-        self.btn_remove = QPushButton("🗑 Удалить")
+        self.btn_remove = QPushButton("Удалить")
         self.btn_remove.clicked.connect(self._remove_selected)
 
-        self.btn_clear = QPushButton("🧹 Очистить")
+        self.btn_clear = QPushButton("Очистить")
         self.btn_clear.clicked.connect(self.clear)
 
         tools_layout.addWidget(self.btn_add_files)
@@ -127,7 +123,7 @@ class BatchTab(QWidget):
         # 3. Files table
         self.table = QTableWidget(0, 7)
         self.table.setHorizontalHeaderLabels([
-            "✓", "Имя файла", "Путь к папке", "Размер (МБ)", "Схема", "Единицы", "Статус / Результат"
+            "", "Имя файла", "Путь к папке", "Размер (МБ)", "Схема", "Единицы", "Статус / Результат"
         ])
         header = self.table.horizontalHeader()
         header.setSectionResizeMode(0, QHeaderView.ResizeMode.ResizeToContents)
@@ -167,7 +163,7 @@ class BatchTab(QWidget):
         self.radio_folder = QRadioButton("Сохранять все файлы в отдельную папку:")
         self.edit_output_folder = QLineEdit()
         self.edit_output_folder.setPlaceholderText("Выберите папку назначения...")
-        self.btn_browse_out_folder = QPushButton("📁 Обзор...")
+        self.btn_browse_out_folder = QPushButton("Обзор...")
         self.btn_browse_out_folder.clicked.connect(self._browse_output_folder)
         r2_layout.addWidget(self.radio_folder)
         r2_layout.addWidget(self.edit_output_folder, 1)
@@ -308,10 +304,10 @@ class BatchTab(QWidget):
             item = self.table.item(index, 6)
             if item:
                 if success:
-                    item.setText(f"✓ Готово ({elapsed:.1f}с)")
+                    item.setText(f"Готово ({elapsed:.1f}с)")
                     item.setForeground(QColor(COLOR_GREEN_PRIMARY))
                 else:
-                    item.setText(f"✗ Ошибка: {msg}")
+                    item.setText(f"Ошибка: {msg}")
                     item.setForeground(QColor("#ef4444"))
 
     def dragEnterEvent(self, event: QDragEnterEvent):

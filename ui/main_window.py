@@ -29,7 +29,7 @@ class MainWindow(QMainWindow):
         self._init_ui()
 
     def _init_window(self):
-        self.setWindowTitle("IFC Coordinator v1.1 — Координация моделей IFC")
+        self.setWindowTitle("IFC Coordinator v1.2 — Координация моделей IFC")
         self.resize(1120, 760)
         self.setMinimumSize(880, 600)
 
@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         header_layout = QHBoxLayout()
         header_layout.setSpacing(12)
 
-        # Title & Corporate Badge
+        # Title
         title_vbox = QVBoxLayout()
         title_vbox.setSpacing(2)
 
@@ -60,10 +60,6 @@ class MainWindow(QMainWindow):
         lbl_title = QLabel("IFC COORDINATOR")
         lbl_title.setObjectName("title_label")
         title_row.addWidget(lbl_title)
-
-        lbl_badge = QLabel("ЦТИП")
-        lbl_badge.setObjectName("brand_badge")
-        title_row.addWidget(lbl_badge)
         title_row.addStretch()
 
         lbl_sub = QLabel("Пакетное и одиночное смещение и поворот моделей IFC • 100% сохранность геометрии и атрибутов")
@@ -74,7 +70,7 @@ class MainWindow(QMainWindow):
         header_layout.addLayout(title_vbox, 1)
 
         # Theme Switcher Button
-        self.btn_theme_toggle = QPushButton("☀️ Светлая тема")
+        self.btn_theme_toggle = QPushButton("Светлая тема")
         self.btn_theme_toggle.setObjectName("theme_toggle")
         self.btn_theme_toggle.setToolTip("Переключить тему оформления (светлая / тёмная)")
         self.btn_theme_toggle.clicked.connect(self._toggle_theme)
@@ -90,8 +86,8 @@ class MainWindow(QMainWindow):
         self.single_tab = SingleTab()
         self.batch_tab = BatchTab()
 
-        self.tabs.addTab(self.single_tab, "📄 Одиночный файл (Single)")
-        self.tabs.addTab(self.batch_tab, "📁 Пакетная координация (Batch)")
+        self.tabs.addTab(self.single_tab, "Одиночный файл (Single)")
+        self.tabs.addTab(self.batch_tab, "Пакетная координация (Batch)")
 
         top_splitter.addWidget(self.tabs)
 
@@ -131,12 +127,12 @@ class MainWindow(QMainWindow):
         self.progress_bar.setTextVisible(True)
         self.progress_bar.setFormat("%v / %m (%p%)")
 
-        self.btn_execute = QPushButton("🚀 Выполнить координацию")
+        self.btn_execute = QPushButton("Выполнить координацию")
         self.btn_execute.setObjectName("execute_button")
         self.btn_execute.setMinimumHeight(40)
         self.btn_execute.clicked.connect(self._start_coordination)
 
-        self.btn_cancel = QPushButton("⏹ Отмена")
+        self.btn_cancel = QPushButton("Отмена")
         self.btn_cancel.setObjectName("cancel_button")
         self.btn_cancel.setMinimumHeight(40)
         self.btn_cancel.setEnabled(False)
@@ -161,15 +157,15 @@ class MainWindow(QMainWindow):
         if self.is_dark_theme:
             # Switch to Light
             app.setStyleSheet(LIGHT_THEME_QSS)
-            self.btn_theme_toggle.setText("🌙 Тёмная тема")
+            self.btn_theme_toggle.setText("Тёмная тема")
             self.is_dark_theme = False
             self.status_bar.showMessage("Применена светлая тема оформления.")
         else:
             # Switch to Dark
             app.setStyleSheet(DARK_THEME_QSS)
-            self.btn_theme_toggle.setText("☀️ Светлая тема")
+            self.btn_theme_toggle.setText("Светлая тема")
             self.is_dark_theme = True
-            self.status_bar.showMessage("Применена тёмная тема оформления (ЦТИП).")
+            self.status_bar.showMessage("Применена тёмная тема оформления.")
 
     def _start_coordination(self):
         try:

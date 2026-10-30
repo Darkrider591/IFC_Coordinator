@@ -197,42 +197,45 @@ QPushButton#theme_toggle:hover {{
     color: #ffffff;
 }}
 
-/* Primary Action Execute Button (CTIP Emerald) */
+/* Action Buttons - Neutral styling */
 QPushButton#execute_button {{
-    background-color: {COLOR_GREEN_PRIMARY};
-    color: #ffffff;
-    border: 1px solid {COLOR_GREEN_HOVER};
-    font-size: 14px;
-    font-weight: bold;
+    background-color: #31373e;
+    color: #f0f3f6;
+    border: 1px solid #48525e;
+    font-size: 13px;
+    font-weight: 600;
     padding: 8px 24px;
     border-radius: 5px;
 }}
 
 QPushButton#execute_button:hover {{
-    background-color: {COLOR_GREEN_HOVER};
-    border-color: #38db9f;
+    background-color: #3b434c;
+    border-color: #5c6878;
+    color: #ffffff;
 }}
 
 QPushButton#execute_button:pressed {{
-    background-color: {COLOR_GREEN_DARK};
+    background-color: #24292f;
 }}
 
 QPushButton#cancel_button {{
-    background-color: #a32d43;
-    color: #ffffff;
-    border: 1px solid #b8364e;
-    font-size: 14px;
-    font-weight: bold;
+    background-color: #24282d;
+    color: #b2bcc6;
+    border: 1px solid #3a424b;
+    font-size: 13px;
+    font-weight: 500;
     padding: 8px 20px;
     border-radius: 5px;
 }}
 
 QPushButton#cancel_button:hover {{
-    background-color: #be3552;
+    background-color: #2d3339;
+    border-color: #4b5561;
+    color: #e6ebed;
 }}
 
 QPushButton#cancel_button:pressed {{
-    background-color: #872236;
+    background-color: #1a1e22;
 }}
 
 /* Checkboxes & Radio */
@@ -535,41 +538,45 @@ QPushButton#theme_toggle:hover {{
     border-color: {COLOR_GREEN_PRIMARY};
 }}
 
-/* Primary Action Execute Button (CTIP Emerald) */
+/* Action Buttons - Neutral styling */
 QPushButton#execute_button {{
-    background-color: {COLOR_GREEN_PRIMARY};
-    color: #ffffff;
-    border: 1px solid {COLOR_GREEN_DARK};
-    font-size: 14px;
-    font-weight: bold;
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border: 1px solid #cbd5e1;
+    font-size: 13px;
+    font-weight: 600;
     padding: 8px 24px;
     border-radius: 5px;
 }}
 
 QPushButton#execute_button:hover {{
-    background-color: {COLOR_GREEN_HOVER};
+    background-color: #d1d5db;
+    border-color: #94a3b8;
+    color: #0f172a;
 }}
 
 QPushButton#execute_button:pressed {{
-    background-color: {COLOR_GREEN_DARK};
+    background-color: #cbd5e1;
 }}
 
 QPushButton#cancel_button {{
-    background-color: #dc2626;
-    color: #ffffff;
-    border: 1px solid #b91c1c;
-    font-size: 14px;
-    font-weight: bold;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    font-size: 13px;
+    font-weight: 500;
     padding: 8px 20px;
     border-radius: 5px;
 }}
 
 QPushButton#cancel_button:hover {{
-    background-color: #ef4444;
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
+    color: #1e293b;
 }}
 
 QPushButton#cancel_button:pressed {{
-    background-color: #991b1b;
+    background-color: #cbd5e1;
 }}
 
 /* Checkboxes & Radio */

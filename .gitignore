@@ -11,6 +11,8 @@ dist/
 
 # Executables and large binary artifacts (use GitHub Releases instead)
 *.exe
+versions/
+_versions/
 
 # Virtual environments
 venv/

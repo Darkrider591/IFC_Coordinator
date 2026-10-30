@@ -37,11 +37,11 @@ class ParamsWidget(QWidget):
         self.preset_combo = QComboBox()
         self.preset_combo.currentIndexChanged.connect(self._on_preset_selected)
 
-        self.btn_save_preset = QPushButton("💾 Сохранить")
+        self.btn_save_preset = QPushButton("Сохранить")
         self.btn_save_preset.setToolTip("Сохранить текущие параметры как именованный пресет")
         self.btn_save_preset.clicked.connect(self._save_current_preset)
 
-        self.btn_del_preset = QPushButton("🗑")
+        self.btn_del_preset = QPushButton("Удалить")
         self.btn_del_preset.setToolTip("Удалить выбранный пресет")
         self.btn_del_preset.clicked.connect(self._delete_selected_preset)
 

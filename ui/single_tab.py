@@ -29,10 +29,6 @@ class DropArea(QFrame):
         layout.setContentsMargins(15, 15, 15, 15)
         layout.setSpacing(6)
 
-        self.lbl_icon = QLabel("📥")
-        self.lbl_icon.setStyleSheet("font-size: 26px;")
-        self.lbl_icon.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
         self.lbl_text = QLabel("Перетащите сюда файл .ifc или нажмите для выбора")
         self.lbl_text.setStyleSheet("font-size: 14px; font-weight: 600;")
         self.lbl_text.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -41,7 +37,6 @@ class DropArea(QFrame):
         self.lbl_subtext.setStyleSheet("font-size: 11px; opacity: 0.7;")
         self.lbl_subtext.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        layout.addWidget(self.lbl_icon)
         layout.addWidget(self.lbl_text)
         layout.addWidget(self.lbl_subtext)
 
@@ -95,7 +90,7 @@ class SingleTab(QWidget):
         self.edit_input.setPlaceholderText("Путь к исходному файлу .ifc...")
         self.edit_input.textChanged.connect(self._on_input_changed)
 
-        self.btn_browse_input = QPushButton("📁 Обзор...")
+        self.btn_browse_input = QPushButton("Обзор...")
         self.btn_browse_input.clicked.connect(self._browse_input)
 
         input_layout.addWidget(self.edit_input, 1)
@@ -132,7 +127,7 @@ class SingleTab(QWidget):
         self.edit_output = QLineEdit()
         self.edit_output.setPlaceholderText("Итоговый путь сохранения файла...")
 
-        self.btn_browse_output = QPushButton("💾 Выбрать...")
+        self.btn_browse_output = QPushButton("Выбрать...")
         self.btn_browse_output.clicked.connect(self._browse_output)
 
         r2_layout.addWidget(self.radio_custom)

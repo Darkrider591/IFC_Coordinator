@@ -62,7 +62,7 @@ def run_gui():
 
     app = QApplication(sys.argv)
     app.setApplicationName("IFC Coordinator")
-    app.setApplicationVersion("1.1.0")
+    app.setApplicationVersion("1.2.0")
     app.setOrganizationName("BIM Tools")
 
     # Set application icon

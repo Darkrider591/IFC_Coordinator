@@ -41,11 +41,11 @@ class LogWidget(QWidget):
         header_layout.addWidget(QLabel("Журнал операций:"))
         header_layout.addStretch()
 
-        self.btn_copy = QPushButton("📋 Копировать")
+        self.btn_copy = QPushButton("Копировать")
         self.btn_copy.setToolTip("Скопировать текст журнала в буфер обмена")
         self.btn_copy.clicked.connect(self._copy_log)
 
-        self.btn_clear = QPushButton("🧹 Очистить")
+        self.btn_clear = QPushButton("Очистить")
         self.btn_clear.setToolTip("Очистить журнал")
         self.btn_clear.clicked.connect(self.clear)
 
